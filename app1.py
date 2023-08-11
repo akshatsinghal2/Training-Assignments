@@ -7,7 +7,7 @@ with open("model.pkl", "rb") as file:
 with open("vectorizer.pkl", "rb") as file:
     vectorizer = pickle.load(file)
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 @app.route("/")
 def home():
@@ -22,4 +22,3 @@ def detect():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
